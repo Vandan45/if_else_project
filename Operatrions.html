@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Project</title>
+</head>
+
+<body>
+    <h1>Operations</h1>
+
+    <h2>Addition</h2>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="addTwoValue()">
+    <span id="add">+</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="addTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result1"></span>
+
+    <h2>Subtraction</h2>
+    <input type="number" id="number3" name="number3" placeholder="Enter Number 3" onchange="subTwoValue()">
+    <span id="sub">-</span>
+    <input type="number" id="number4" name="number4" placeholder="Enter Number 4" onchange="subTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result2"></span>
+
+    <h2>Multiplication</h2>
+    <input type="number" id="number5" name="number5" placeholder="Enter Number 5" onchange="mulTwoValue()">
+    <span id="mul">*</span>
+    <input type="number" id="number6" name="number6" placeholder="Enter Number 6" onchange="mulTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result3"></span>
+
+    <h2>Division</h2>
+    <input type="number" id="number7" name="number7" placeholder="Enter Number 7" onchange="divTwoValue(this)">
+    <span id="div">/</span>
+    <input type="number" id="number8" name="number8" placeholder="Enter Number 8" onchange="divTwoValue(this)">
+    <span id="isEqualTo">=</span>
+    <span id="result4"></span>
+
+
+    <script>
+        function addTwoValue() {
+            let num1Value = document.getElementById("number1").value;
+            let num2Value = document.getElementById("number2").value;
+            // let num3Value = document.getElementById("number3").value;
+            // let num4Value = document.getElementById("number4").value;
+            // let num5Value = document.getElementById("number5").value;
+            // let num6Value = document.getElementById("number6").value;
+            // let num7Value = document.getElementById("number7").value;
+            // let num8Value = document.getElementById("number8").value;
+            let result;
+            let add = document.getElementById("add").innerHTML;
+            console.log(add);
+            // let sub = document.getElementById("sub").innerHTML;
+            // console.log(sub);
+            // let mul = document.getElementById("mul").innerHTML;
+            // console.log(mul);
+            // let div = document.getElementById("div").innerHTML;
+            // console.log(div);
+            if (num1Value && num2Value && add) {
+                let result1 = parseInt(num1Value) + parseInt(num2Value);
+                document.getElementById("result1").innerHTML = result1;
+                console.log(result1);
+            }
+            // if (num2Value && num4Value && sub) {
+            //     let result2 = parseInt(num1Value) - parseInt(num2Value);
+            //     document.getElementById("result2").innerHTML = result2;
+            //     console.log(result2);
+            // }
+            // if (num5Value && num6Value && mul) {
+            //     let result3 = parseInt(num1Value) * parseInt(num2Value);
+            //     document.getElementById("result3").innerHTML = result3;
+            //     console.log(result3);
+            // }
+            // if (num7Value && num8Value && div) {
+            //     if (num8Value == 0) {
+            //         alert(`Please enter a valid number`);
+            //         this.num8Value = "";
+            //         document.getElementById("resul4").innerHTML = '';
+            //         return;
+            //     } else {
+            //         let result4 = parseInt(num1Value) / parseInt(num2Value);
+            //         document.getElementById("result4").innerHTML = result4;
+            //         console.log(result4);
+            //     }
+            // }
+        }
+        function subTwoValue() {
+            let num3Value = document.getElementById("number3").value;
+            let num4Value = document.getElementById("number4").value;
+            let sub = document.getElementById("sub").innerHTML;
+            console.log(sub);
+            if (num3Value && num4Value && sub) {
+                let result2 = parseInt(num3Value) - parseInt(num4Value);
+                document.getElementById("result2").innerHTML = result2;
+                console.log(result2);
+            }
+        }
+        function mulTwoValue() {
+            let num5Value = document.getElementById("number5").value;
+            let num6Value = document.getElementById("number6").value;
+            let mul = document.getElementById("mul").innerHTML;
+            console.log(mul);
+            if (num5Value && num6Value && mul) {
+                let result3 = parseInt(num5Value) * parseInt(num6Value);
+                document.getElementById("result3").innerHTML = result3;
+                console.log(result3);
+            }
+        }
+        function divTwoValue(element) {
+            let num7Value = document.getElementById("number7").value;
+            let num8Value = document.getElementById("number8").value;
+            let div = document.getElementById("div").innerHTML;
+            console.log(div);
+            if (num7Value && num8Value && div) {
+                if (num8Value == 0) {
+                    alert("Please enter a valid number");
+                    document.getElementById("result4").innerHTML = '';
+                    element.value = "";
+                    return;
+                } else {
+                    let result4 = parseInt(num7Value) / parseInt(num8Value);
+                    document.getElementById("result4").innerHTML = result4;
+                    console.log(result4);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

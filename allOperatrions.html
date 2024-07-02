@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Project</title>
+</head>
+
+<body>
+    <h1>Operations</h1>
+    <h2>Addition</h2>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="addTwoValue()">
+    <span id="add">+</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="addTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result1"></span>
+    <h2>Subtraction</h2>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="addTwoValue()">
+    <span id="add">-</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="addTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result2"></span>
+    <h2>Multiplication</h2>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="addTwoValue()">
+    <span id="add">*</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="addTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result3"></span>
+    <h2>Diviaion</h2>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="addTwoValue()">
+    <span id="add">/</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="addTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result4"></span>
+
+
+    <script>
+        function addTwoValue() {
+            let num1Value = document.getElementById("number1").value;
+            let num2Value = document.getElementById("number2").value;
+            let result;
+            let result4;
+            if (num1Value && num2Value) {
+                document.getElementById("result1").innerHTML = parseInt(num1Value) + parseInt(num2Value);
+                console.log(`Addition of Two Numbers is ${result1}`);
+                document.getElementById("result2").innerHTML = parseInt(num1Value) - parseInt(num2Value);
+                console.log(`Addition of Two Numbers is ${result2}`);
+                document.getElementById("result3").innerHTML = parseInt(num1Value) * parseInt(num2Value);
+                console.log(`Addition of Two Numbers is ${result3}`);
+                // document.getElementById("result4").innerHTML = parseInt(num1Value) / parseInt(num2Value);
+                if (num2Value == 0) {
+                    alert(`Please enter a valid number`);
+                    element.value = "";
+                    document.getElementById("result4").innerHTML = '';
+                    return;
+                }
+                else {
+                    let result4 = parseInt(num1Value) / parseInt(num2Value);
+                    document.getElementById("result4").innerHTML = result4;
+                    // console.log(`Addition of Two Numbers is ${result4}`);
+                    console.log(result4);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

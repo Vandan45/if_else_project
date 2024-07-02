@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Project</title>
+</head>
+
+<body>
+    <h1>Operations</h1>
+
+    <input type="number" id="number1" placeholder="Enter Number 1" onchange="onChangeOperation()">
+    <select id="operation" onchange="onChangeOperation()">
+        <option value=""></option>
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mul">*</option>
+        <option value="div">/</option>
+    </select>
+    <input type="number" id="number2" placeholder="Enter Number 2" onchange="onChangeOperation()">
+
+    <span id="result"></span>
+
+    <script>
+        function onChangeOperation() {
+            let selectOperation = document.getElementById("operation");
+            console.log("Step 1: Select", selectOperation.value);
+
+            let num1Value = document.getElementById("number1").value;
+            let num2Value = document.getElementById("number2").value;
+            console.log("Step 2: Numbers", num1Value, num2Value);
+
+            let resultSpan = document.getElementById("result");
+
+            if (num1Value && num2Value) {
+                num1Value = parseInt(num1Value);
+                num2Value = parseInt(num2Value);
+
+                if (selectOperation.value == 'add') {
+                    let res = num1Value + num2Value
+                    console.log("Step 3: Add", res);
+                    resultSpan.innerHTML = res;
+                }
+                else if (selectOperation.value == 'sub') {
+                    let res = num1Value - num2Value
+                    console.log("Step 3: Sub", res);
+                    resultSpan.innerHTML = res;
+                }
+                else if (selectOperation.value == 'mul') {
+                    let res = num1Value * num2Value
+                    console.log("Step 3: Mul", res);
+                    resultSpan.innerHTML = res;
+                }
+                else if (selectOperation.value == 'div') {
+                    if (num2Value == 0) {
+                        alert("Please enter non-zero number");
+                        document.getElementById("number2").value = "";
+                        resultSpan.innerHTML = "";
+                    } else {
+                        let res = num1Value / num2Value
+                        console.log("Step 3: Div", res);
+                        resultSpan.innerHTML = res;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

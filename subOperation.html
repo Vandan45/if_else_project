@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Project</title>
+</head>
+
+<body>
+    <h1>Operations</h1>
+    <input type="number" id="number1" name="number1" placeholder="Enter Number 1" onchange="subTwoValue()">
+    <span id="add">-</span>
+    <input type="number" id="number2" name="number2" placeholder="Enter Number 2" onchange="subTwoValue()">
+    <span id="isEqualTo">=</span>
+    <span id="result"></span>
+
+
+    <script>
+        function subTwoValue() {
+            let num1Value = document.getElementById("number1").value;
+            let num2Value = document.getElementById("number2").value;
+            let result;
+            if (num1Value && num2Value) {
+                let result = parseInt(num1Value) - parseInt(num2Value);
+                document.getElementById("result").innerHTML = result;
+                console.log(result);
+            }
+        }
+    </script>
+</body>
+
+</html>
